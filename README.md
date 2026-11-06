@@ -13,6 +13,15 @@ npm run dev
 
 Откройте показанный Vite адрес (обычно `http://localhost:5173`). Для проверки production-сборки выполните `npm run build`, затем `npm run preview`.
 
+## Деплой на Vercel
+
+1. Создайте репозиторий проекта на GitHub и отправьте в него исходные файлы (папки `node_modules` и `dist` игнорируются Git).
+2. Войдите в [Vercel](https://vercel.com/), выберите **Add New → Project** и импортируйте GitHub-репозиторий.
+3. Оставьте настройки Vite по умолчанию: install `npm install`, build `npm run build`, output directory `dist`. Они также заданы в `vercel.json`.
+4. Нажмите **Deploy**. Публичный URL появится на странице проекта; последующие push в подключённую ветку будут запускать новый деплой.
+
+Vercel-конфигурация находится в `vercel.json`. `index.html` использует `/src/main.tsx`, который Vite компилирует во время сборки.
+
 ## Возможности макета
 
 - Переключение ролей «Акимат», «ЧС Оператор» и «Частный клиент».
